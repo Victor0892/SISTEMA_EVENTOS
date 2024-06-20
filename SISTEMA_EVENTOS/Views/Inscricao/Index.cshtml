@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SISTEMA_EVENTOS.MODEL.Models.Inscricao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem de Inscrições</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Cadastrar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParticipanteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventoId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ParticipanteId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventoId)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

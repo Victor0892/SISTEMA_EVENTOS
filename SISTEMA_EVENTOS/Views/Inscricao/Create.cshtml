@@ -1,0 +1,66 @@
+﻿@model SISTEMA_EVENTOS.MODEL.ViewModel.InscricaoVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Cadastrar Inscrição</h1>
+
+<h4>Inscricao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ParticipanteId" class="control-label"></label>
+                <input asp-for="ParticipanteId" class="form-control" />
+                <span asp-validation-for="ParticipanteId" class="text-danger"></span>
+            </div>
+            @*  <div class="form-group">
+            <label asp-for="Participante" class="control-label"></label>
+            <input asp-for="Participante" class="form-control" />
+            <span asp-validation-for="Participante" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="EventoId" class="control-label"></label>
+                <input asp-for="EventoId" class="form-control" />
+                <span asp-validation-for="EventoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInscricao" class="control-label"></label>
+                <input asp-for="DataInscricao" class="form-control" />
+                <span asp-validation-for="DataInscricao" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-top: 20px;">
+                <input type="submit" value="Salvar Dados" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div style="margin-top: 20px;">
+    <a class="btn btn-secondary" asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        var msg = "@ViewData["Mensagem"]";
+        var mensagemErro = "@ViewData["MensagemErro"]";
+    </script>
+    <script>
+        if (msg != "") {
+            alert(msg);
+        }
+        if (mensagemErro != "") {
+            alert(mensagemErro);
+        }
+    </script>
+}

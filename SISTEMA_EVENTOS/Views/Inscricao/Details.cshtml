@@ -1,0 +1,36 @@
+﻿@model SISTEMA_EVENTOS.MODEL.Models.Inscricao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes da Inscrição</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ParticipanteId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ParticipanteId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EventoId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventoId)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    <a class="btn btn-primary" asp-action="Index">Voltar para a Lista</a>
+</div>
